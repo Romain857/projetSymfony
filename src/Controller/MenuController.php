@@ -7,13 +7,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MenuController extends AbstractController
 {
-    /**
-     * @Route("/menu", name="menu")
-     */
-    public function index()
+
+    public function menu()
     {
-        return $this->render('menu/index.html.twig', [
-            'controller_name' => 'MenuController',
+        return $this->render('menu/_menu.html.twig', [
+            //'controller_name' => 'MenuController',
         ]);
     }
 }

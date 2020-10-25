@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcd2dd2-fe3d-4df2-ae42-cee8a76f6e72" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/projetSymfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetSymfony.iml" afterDir="false" />
+    <list default="true" id="2bcd2dd2-fe3d-4df2-ae42-cee8a76f6e72" name="Default Changelist" comment="Ajout controlleurs">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201025164306.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ParticipantController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Participant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ParticipantSupprimerType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ParticipantType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ParticipantRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/menu/_menu.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/participant/ajouter.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/participant/modifier.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/participant/supprimer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/participant/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +50,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -124,15 +164,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iVZqv0Re2DyQuU8OYc3UjxXrIk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/EPSI/workshopjs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../js/DemineurJS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -149,16 +192,62 @@
       <workItem from="1601995332335" duration="226000" />
       <workItem from="1601995585954" duration="57000" />
       <workItem from="1601995666967" duration="17000" />
+      <workItem from="1601995883227" duration="1133000" />
+      <workItem from="1602050864402" duration="39000" />
+      <workItem from="1603452574368" duration="2041000" />
+      <workItem from="1603638867620" duration="1896000" />
+      <workItem from="1603641310034" duration="2132000" />
+      <workItem from="1603643466970" duration="2158000" />
+      <workItem from="1603664448444" duration="98000" />
+      <workItem from="1603664557868" duration="16000" />
+      <workItem from="1603664657248" duration="2683000" />
     </task>
+    <task id="LOCAL-00001" summary="Ajout controlleurs">
+      <created>1601996203477</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601996203477</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ajout controlleurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout controlleurs" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603666183809">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603666183809" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602050900947">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602050900947" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1601995556444">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1601995556444" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601996218482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1601996218482" />
   </component>
 </project>
