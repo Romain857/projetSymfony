@@ -32,6 +32,8 @@ class Participant
      */
     private $prix;
 
+    private $sum = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,5 +73,23 @@ class Participant
         $this->prix = $prix;
 
         return $this;
+    }
+
+    public function getSumPrice()
+    {
+        if(null === $this-> sum) {
+            foreach ($this->prix as $prix) {
+                $sum += $prix->getPrice();
+            }
+        }
+        return $sum;
+    }
+
+    public function getCountUser(){
+
+    }
+
+    public function getAveragePrice(){
+
     }
 }

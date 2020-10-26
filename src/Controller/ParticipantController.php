@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ParticipantController extends AbstractController
 {
+
     /**
      * @Route("/participant", name="participant")
      */
@@ -97,6 +98,19 @@ class ParticipantController extends AbstractController
 
         return $this->render("participant/supprimer.html.twig",[
             "formulaire"=>$form->createView(),
+            "participant"=>$participant
+        ]);
+    }
+
+    /**
+     * @Route("/participant/calcul", name="participant_calcul")
+     */
+    public function calcul()
+    {
+        $repository = $this->getDoctrine()->getRepository(Participant::class);
+        $participant = $repository->findAll();
+
+        return $this->render('participant/calcul.html.twig', [
             "participant"=>$participant
         ]);
     }

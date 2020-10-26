@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Voici le calcul de remboursement {% endblock %}
+
+{% block body %}
+    <h1>Les dettes</h1>
+
+    {% set somme = 0 %}
+    {% set nombreP = participant|length %}
+
+    {% for p in participant %}
+        {% set somme = somme+ p.prix %}
+    {% endfor %}
+    <h3>Nombre de participants : {{ nombreP }}</h3>
+    <h3>La somme totale dépensée lors de cette soirée est de {{ somme }} €</h3>
+
+    {% for p in participant %}
+        <p>{{ p.prenom }} {{ p.nom }} à dépensé {{ p.prix }} € </p>
+    {% endfor %}
+
+    {% set moyenneP = somme / nombreP %}
+    <br>
+    <h3>La moyenne d'argent dépensée est de {{ moyenneP }} €</h3>
+
+    <table class="table">
+        <tr>
+            <th>Etat</th>
+            <th>Remboursement</th>
+        </tr>
+
+        {% for p in participant %}
+            <tr>
+                {% set dette = moyenneP - p.prix %}
+                {% set recup = p.prix - moyenneP %}
+
+                {% if p.prix > moyenneP %}
+                    <td>{{ p.prenom }} {{ p.nom }} a dépensé plus d'argent que la moyenne</td>
+                    <td>{{ p.prenom }} {{ p.nom }} doit être remboursé de {{ recup }} €</td>
+                {% else %}
+                    <td>{{ p.prenom }} {{ p.nom }} a des dettes</td>
+                    <td>{{ p.prenom }} {{ p.nom }} doit donner {{ dette }} €</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a class="btn btn-danger" href="{{ path ("participant") }}">&lt; Annuler</a>
+{% endblock %}
