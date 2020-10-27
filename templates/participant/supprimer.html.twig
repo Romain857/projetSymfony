@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Supprimer un participant {% endblock %}
+
+{% block body %}
+    <h1>Supprimer un participant</h1>
+    <h2>Etes-vous sur de vouloir supprimer {{ participant.prenom }} {{ participant.nom}} de la soirée ?</h2>
+    {{ form(formulaire) }}
+    <a class="btn btn-danger" href="{{ path ("participant") }}">&lt; Annuler</a>
+{% endblock %}
