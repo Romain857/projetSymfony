@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Les dettes</h1>
-
+    <br>
     {% set somme = 0 %}
     {% set nombreP = participant|length %}
 
@@ -14,16 +14,14 @@
     <h3>Nombre de participants : {{ nombreP }}</h3>
     <h3>La somme totale dépensée lors de cette soirée est de {{ somme }} €</h3>
 
-    {% for p in participant %}
-        <p>{{ p.prenom }} {{ p.nom }} à dépensé {{ p.prix }} € </p>
-    {% endfor %}
 
     {% set moyenneP = somme / nombreP %}
-    <br>
-    <h3>La moyenne d'argent dépensée est de {{ moyenneP }} €</h3>
+    <h3>La moyenne d'argent dépensée par personne est de {{ moyenneP }} €</h3>
 
+    <br>
     <table class="table">
         <tr>
+            <th>Participants</th>
             <th>Etat</th>
             <th>Remboursement</th>
         </tr>
@@ -32,7 +30,9 @@
             <tr>
                 {% set dette = moyenneP - p.prix %}
                 {% set recup = p.prix - moyenneP %}
-
+                <td>
+                    <p>{{ p.prenom }} {{ p.nom }} à dépensé {{ p.prix }} € </p>
+                </td>
                 {% if p.prix > moyenneP %}
                     <td>{{ p.prenom }} {{ p.nom }} a dépensé plus d'argent que la moyenne</td>
                     <td>{{ p.prenom }} {{ p.nom }} doit être remboursé de {{ recup }} €</td>
