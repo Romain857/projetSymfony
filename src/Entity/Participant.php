@@ -85,11 +85,9 @@ class Participant
         return $sum;
     }
 
-    public function getCountUser(){
-
-    }
-
-    public function getAveragePrice(){
-
+    public function getSum()
+    {
+        $sum = 'SELECT sum(prix) FROM participant p';
+        return $sum;
     }
 }

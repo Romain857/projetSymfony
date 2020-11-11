@@ -6,6 +6,7 @@ use App\Entity\Participant;
 //use App\Form\ParticipantSupprimerType;
 use App\Form\ParticipantSupprimerType;
 use App\Form\ParticipantType;
+use Doctrine\ORM\Query\Expr\Select;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -107,11 +108,38 @@ class ParticipantController extends AbstractController
      */
     public function calcul()
     {
-        $repository = $this->getDoctrine()->getRepository(Participant::class);
-        $participant = $repository->findAll();
+        $repo = $this->getDoctrine()->getRepository(Participant::class);
+        $participant = $repo->findAll();
+
+        $somme = $repo->createQueryBuilder('p')
+            ->select('SUM(p.prix) as somme')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        $compte = $repo->createQueryBuilder('p')
+            ->select('COUNT(p.id) as compte')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        $moyenneP = $somme / $compte;
+
+        $prixP = $repo->createQueryBuilder('p')
+            ->select('p.prix as prixP')
+            ->getQuery()
+            ->getScalarResult();
+
+        //$dette = $moyenneP - $prixP;
+        //$recup = $prixP - $moyenneP;
 
         return $this->render('participant/calcul.html.twig', [
-            "participant"=>$participant
+            'participant' => $participant,
+            'somme' => $somme,
+            'compte' => $compte,
+            'moyenneP' => $moyenneP,
+            'prixP' => $prixP,
+            //'dette' => $dette,
+            //'recup' => $recup
         ]);
     }
+
 }

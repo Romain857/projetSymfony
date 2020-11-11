@@ -1,21 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Voici le calcul de remboursement {% endblock %}
+{% block title %} Calcul de remboursement {% endblock %}
 
 {% block body %}
     <h1>Les dettes</h1>
     <br>
-    {% set somme = 0 %}
-    {% set nombreP = participant|length %}
-
-    {% for p in participant %}
-        {% set somme = somme+ p.prix %}
-    {% endfor %}
-    <h3>Nombre de participants : {{ nombreP }}</h3>
+    <h3>Nombre de participants : {{ compte }}</h3>
     <h3>La somme totale dépensée lors de cette soirée est de {{ somme }} €</h3>
-
-
-    {% set moyenneP = somme / nombreP %}
     <h3>La moyenne d'argent dépensée par personne est de {{ moyenneP }} €</h3>
 
     <br>
@@ -34,15 +25,50 @@
                     <p>{{ p.prenom }} {{ p.nom }} à dépensé {{ p.prix }} € </p>
                 </td>
                 {% if p.prix > moyenneP %}
-                    <td>{{ p.prenom }} {{ p.nom }} a dépensé plus d'argent que la moyenne</td>
-                    <td>{{ p.prenom }} {{ p.nom }} doit être remboursé de {{ recup }} €</td>
+                    <td class="vert">{{ p.prenom }} {{ p.nom }} a dépensé plus d'argent que la moyenne</td>
+                    <td class="vert">{{ p.prenom }} {{ p.nom }} doit être remboursé de {{ recup }} €</td>
                 {% else %}
-                    <td>{{ p.prenom }} {{ p.nom }} a des dettes</td>
-                    <td>{{ p.prenom }} {{ p.nom }} doit donner {{ dette }} €</td>
+                    <td class="rouge">{{ p.prenom }} {{ p.nom }} a des dettes</td>
+                    <td class="rouge">{{ p.prenom }} {{ p.nom }} doit donner {{ dette }} €</td>
                 {% endif %}
+
             </tr>
         {% endfor %}
     </table>
+
+    <h3>Une solution :</h3>
+
+    {% for p in participant %}
+        {% set NOM = p.nom%}
+        {% set PRENOM = p.prenom %}
+        {% set recup = p.prix - moyenneP %}
+
+
+        <tr>
+            {% if p.prix > moyenneP %}
+                {% for p in participant %}
+                    {% set dette = moyenneP - p.prix %}
+                    {% if p.prix < moyenneP %}
+                        {% if dette < recup %}
+                            {% set recup = recup - dette%}
+                            <td>{{ p.prenom }} {{ p.nom }} doit donner {{ dette }}€ à {{ PRENOM }} {{ NOM }}</td>
+                            <td> -----> {{ p.prenom }} {{ p.nom }} dette : {{dette}}€       {{ PRENOM }} {{ NOM }} recup : {{ recup }}€</td>
+                            <br>
+                        {% else %}
+                            {% if dette >= recup %}
+                                {% set dette = recup %}
+                                {% set recup = recup - recup %}
+                                <td>{{ p.prenom }} {{ p.nom }} doit donner {{ dette }}€ à {{ PRENOM }} {{ NOM }}</td>
+                                <td> -----> {{ p.prenom }} {{ p.nom }} dette : {{dette}}€      {{ PRENOM }} {{ NOM }} recup : {{ recup }}€</td>
+                                <br>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                {%endfor%}
+            {% endif %}
+
+        </tr>
+    {% endfor %}
 
     <a class="btn btn-danger" href="{{ path ("participant") }}">&lt; Annuler</a>
 {% endblock %}
