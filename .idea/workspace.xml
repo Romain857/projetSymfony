@@ -19,8 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcd2dd2-fe3d-4df2-ae42-cee8a76f6e72" name="Default Changelist" comment="Ajout calcul reboursement/dette">
+    <list default="true" id="2bcd2dd2-fe3d-4df2-ae42-cee8a76f6e72" name="Default Changelist" comment="Modification calcul">
+      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ParticipantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ParticipantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ParticipantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ParticipantRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/participant/calcul.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/participant/calcul.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +189,22 @@
       <workItem from="1603664448444" duration="98000" />
       <workItem from="1603664557868" duration="16000" />
       <workItem from="1603664657248" duration="21435000" />
-      <workItem from="1603803341674" duration="1638000" />
+      <workItem from="1603803341674" duration="4080000" />
+      <workItem from="1604071745972" duration="39000" />
+      <workItem from="1604072663692" duration="1121000" />
+      <workItem from="1604249890571" duration="2731000" />
+      <workItem from="1604350918038" duration="2231000" />
+      <workItem from="1604353184311" duration="35000" />
+      <workItem from="1604446460359" duration="410000" />
+      <workItem from="1604504740696" duration="8739000" />
+      <workItem from="1604610085466" duration="637000" />
+      <workItem from="1604686755469" duration="63000" />
+      <workItem from="1604690864302" duration="57000" />
+      <workItem from="1604850472380" duration="2481000" />
+      <workItem from="1604936676267" duration="996000" />
+      <workItem from="1604958719509" duration="5833000" />
+      <workItem from="1605038539047" duration="8231000" />
+      <workItem from="1605103580852" duration="2524000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout controlleurs">
       <created>1601996203477</created>
@@ -207,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603742869950</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modification calcul">
+      <created>1603821045877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603821045877</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +257,8 @@
     <MESSAGE value="Ajout controlleurs" />
     <MESSAGE value="Ajout BDD + ajouter/modifier/suppimer un user" />
     <MESSAGE value="Ajout calcul reboursement/dette" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout calcul reboursement/dette" />
+    <MESSAGE value="Modification calcul" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification calcul" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603666183809">
@@ -249,10 +277,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1601995556444" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603742887459">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603821073887">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1601996218482" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603742887459" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603821073887" />
   </component>
 </project>
