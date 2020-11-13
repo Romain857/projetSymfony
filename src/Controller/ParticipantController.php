@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Participant;
+
 //use App\Form\ParticipantSupprimerType;
 use App\Form\ParticipantSupprimerType;
 use App\Form\ParticipantType;
@@ -31,49 +32,52 @@ class ParticipantController extends AbstractController
     /**
      * @Route("/participant/ajouter", name="participant_ajouter")
      */
-    public function ajouter(Request $request){
+    public function ajouter(Request $request)
+    {
 
-        $participant=new Participant();
+        $participant = new Participant();
 
-        $form = $this->createForm(ParticipantType::class,$participant);
+        $form = $this->createForm(ParticipantType::class, $participant);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($participant);
             $em->flush();
 
             return $this->redirectToRoute('participant');
         }
 
-        return $this->render("participant/ajouter.html.twig",[
+        return $this->render("participant/ajouter.html.twig", [
 
-            "formulaire"=>$form->createView()
+            "formulaire" => $form->createView()
         ]);
     }
+
     /**
      * @Route("/participant/modifier/{id}", name="participant_modifier")
      */
 
-    public function modifier($id, Request $request){
+    public function modifier($id, Request $request)
+    {
 
         $repo = $this->getDoctrine()->getRepository(Participant::class);
-        $participant=$repo->find($id);
+        $participant = $repo->find($id);
 
-        $form = $this->createForm(ParticipantType::class,$participant);
+        $form = $this->createForm(ParticipantType::class, $participant);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($participant);
             $em->flush();
 
             return $this->redirectToRoute('participant');
         }
 
-        return $this->render("participant/modifier.html.twig",[
-            "formulaire"=>$form->createView(),
-            "participant"=>$participant
+        return $this->render("participant/modifier.html.twig", [
+            "formulaire" => $form->createView(),
+            "participant" => $participant
         ]);
     }
 
@@ -81,25 +85,26 @@ class ParticipantController extends AbstractController
      * @Route("/participant/supprimer/{id}", name="participant_supprimer")
      */
 
-    public function supprimer($id, Request $request){
+    public function supprimer($id, Request $request)
+    {
 
         $repo = $this->getDoctrine()->getRepository(Participant::class);
-        $participant=$repo->find($id);
+        $participant = $repo->find($id);
 
-        $form = $this->createForm(ParticipantSupprimerType::class,$participant);
+        $form = $this->createForm(ParticipantSupprimerType::class, $participant);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->remove($participant);
             $em->flush();
 
             return $this->redirectToRoute('participant');
         }
 
-        return $this->render("participant/supprimer.html.twig",[
-            "formulaire"=>$form->createView(),
-            "participant"=>$participant
+        return $this->render("participant/supprimer.html.twig", [
+            "formulaire" => $form->createView(),
+            "participant" => $participant
         ]);
     }
 
@@ -123,23 +128,28 @@ class ParticipantController extends AbstractController
 
         $moyenneP = $somme / $compte;
 
-        $prixP = $repo->createQueryBuilder('p')
-            ->select('p.prix as prixP')
-            ->getQuery()
-            ->getScalarResult();
+        $output = array();
 
-        //$dette = $moyenneP - $prixP;
-        //$recup = $prixP - $moyenneP;
+        foreach ($participant as $key => $part) {
+
+            $prixP = $part->getPrix();
+            $dette = $moyenneP - $prixP;
+            $recup = $prixP - $moyenneP;
+
+            $output[$key] = array(
+                'nom' => $part->getNom(),
+                'prenom' => $part->getPrenom(),
+                'prix' => $part->getPrix(),
+                'dette' => $dette,
+                'recup' => $recup
+                );
+            }
 
         return $this->render('participant/calcul.html.twig', [
-            'participant' => $participant,
             'somme' => $somme,
             'compte' => $compte,
             'moyenneP' => $moyenneP,
-            'prixP' => $prixP,
-            //'dette' => $dette,
-            //'recup' => $recup
+            'output' => $output,
         ]);
     }
-
 }
