@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcd2dd2-fe3d-4df2-ae42-cee8a76f6e72" name="Default Changelist" comment="Init calcul dans Controller">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201111214816.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201111215214.php" afterDir="false" />
+    <list default="true" id="2bcd2dd2-fe3d-4df2-ae42-cee8a76f6e72" name="Default Changelist" comment="Terminé Tableau Calcul dans Controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ParticipantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ParticipantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/_menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/participant/calcul.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/participant/calcul.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +206,9 @@
       <workItem from="1605131378858" duration="1333000" />
       <workItem from="1605191562946" duration="600000" />
       <workItem from="1605203110273" duration="111000" />
-      <workItem from="1605203255461" duration="10825000" />
+      <workItem from="1605203255461" duration="11554000" />
+      <workItem from="1605274187953" duration="3382000" />
+      <workItem from="1605290108505" duration="6547000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout controlleurs">
       <created>1601996203477</created>
@@ -247,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605112300687</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Terminé Tableau Calcul dans Controller">
+      <created>1605218090590</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605218090590</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +277,8 @@
     <MESSAGE value="Ajout calcul reboursement/dette" />
     <MESSAGE value="Modification calcul" />
     <MESSAGE value="Init calcul dans Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init calcul dans Controller" />
+    <MESSAGE value="Terminé Tableau Calcul dans Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminé Tableau Calcul dans Controller" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603666183809">
@@ -291,10 +297,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1601995556444" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605112314044">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605218099819">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1601996218482" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605112314044" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605218099819" />
   </component>
 </project>

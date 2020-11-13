@@ -10,6 +10,52 @@
     color: blue;
 }
 
-.size{
+.infoTop{
     font-size: x-large;
+    border: solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nb{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.sum{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.moy{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.solution{
+    border: solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 25%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+.soluc1{
+    margin-left: 10px;
+    text-align: left;
+}
+
+.bottomInfo{
+    text-align: center;
 }
